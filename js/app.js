@@ -1,4 +1,5 @@
 const urlUF = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados';
+const numCidades = document.querySelector("[id = 'nc']");
 const cidade = document.querySelector('#cidade');
 const uf = document.querySelector('#uf');
 
@@ -17,7 +18,6 @@ uf.addEventListener('change', async () => {
   });
   cidade.innerHTML = options;
 
-  const numCidades = document.querySelector("[id = 'nc']");
   numCidades.value = response.length;
 });
 
