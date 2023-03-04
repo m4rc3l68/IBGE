@@ -7,16 +7,18 @@ uf.addEventListener('change', async () => {
     'https://servicodados.ibge.gov.br/api/v1/localidades/estados/' +
     uf.value +
     '/municipios';
-
   const request = await fetch(urlCidades);
   const response = await request.json();
+  console.log(response.length);
 
   let options = '';
   response.forEach((cidades) => {
     options += '<option>' + cidades.nome + '</option>';
   });
-
   cidade.innerHTML = options;
+
+  const numCidades = document.querySelector("[id = 'nc']");
+  numCidades.value = response.length;
 });
 
 window.addEventListener('load', async () => {
