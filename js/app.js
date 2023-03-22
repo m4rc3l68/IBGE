@@ -19,6 +19,7 @@ uf.addEventListener('change', async () => {
   cidade.innerHTML = options;
 
   numCidades.value = response.length;
+  console.log('');
 });
 
 window.addEventListener('load', async () => {
